@@ -1,8 +1,8 @@
 <?php
-require_once("Estoque.php");
+    require_once("Estoque.php");
 
-$estoq = new Estoque("Maçã", 10, 3.99);
+    $estoq = new Estoque("Maçã", 10, 3.99);
 
-echo $estoq;
+    echo $estoq;
 
 ?>
