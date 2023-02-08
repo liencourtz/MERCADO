@@ -30,5 +30,29 @@
         }
       }
 
+      public function compra(Conexao $conexao, Consultar $verif, Inserir $insert, int $qnt, int $codigo){
+        try{
+
+          $teste = $verif -> consultarEstoque($conexao, $codigo);
+          if ($teste >= $qnt){
+
+            $conn = $conexao ->conectar();
+            $sql = "update estoque set qnt = qnt - $qnt  where codigo = '$codigo'";
+            mysqli_query($conn, $sql);
+            echo "<br>Inserido no carrinho!";
+
+          }else{
+
+            echo "<br> Estoque insuficiente";
+
+          }
+          
+          
+
+        }catch(except $erro){
+          echo $erro;
+        }
+  }
+
     }
 ?>

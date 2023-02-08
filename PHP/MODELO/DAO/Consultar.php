@@ -79,6 +79,23 @@
             }
         }
 
+        public function consultarEstoque(Conexao $conexao,  int $codigo){
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from estoque where codigo = '$codigo'";
+                $result = mysqli_query($conn, $sql);
+
+                while($dados = mysqli_fetch_array($result)){
+                    if($dados['codigo'] == $codigo){
+                        return $dados['qnt'];
+                    }
+                }
+
+                mysqli_close($conn);
+            }catch(except $erro){
+                echo $erro;
+            }
+        }
 
 
         

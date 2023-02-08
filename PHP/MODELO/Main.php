@@ -32,6 +32,8 @@
     //$print ->consultarFunTudo($connect);
     //$print ->consultarCliTudo($connect);
 
+    $update ->compra($connect, $print, $insert, 1, 10);
+
 
     //$del ->deletar($connect, 'Estoque', 3);
     
